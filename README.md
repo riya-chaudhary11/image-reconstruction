@@ -1,0 +1,5 @@
+This project consists of three models- standard auto encoder, variational auto encoder and masked auto encoder.
+1. ae_model: this file contains a standard Autoencoder (AE) to learn meaningful representations from the CIFAR-10 dataset. The encoder consists of convolutional layers for feature extraction. The decoder uses transpose convolutions (ConvTranspose2D) to reconstruct images. The model is trained using Mean Squared Error (MSE) loss. It also contains a Denoising Autoencoder (DAE) is trained to reconstruct original images from corrupted versions. The DAE is trained with different levels of noise (Gaussian noise with σ = 0.1, 0.3, 0.5).
+2. vae_ model: the autoencoder model is extended into a VAE, incorporating a probabilistic latent space. Reparameterization trick is also implemented. The loss used is KL-divergence loss + reconstruction loss.
+3. mae_model: this model uses CNN layers to mask random patches in feature maps instead of raw image patches. It is trained with different masking ratios.
+4. compare_ae_vae_mae: this file compares all trained models on the basis of MSE, SSIM and PSNR.
